@@ -21,4 +21,10 @@ class CacheClient {
     if (value is T) return value;
     return null;
   }
+
+  T? delete<T extends Object>({required String key}) {
+    final value = _cache.remove(key);
+    if (value is T) return value;
+    return null;
+  }
 }
